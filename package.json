@@ -1,0 +1,44 @@
+{
+  "name": "epic_rock_radio",
+  "version": "1.0.1",
+  "description": "",
+  "main": ".bin/index.dist.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel index.js -o index.dist.js && babel image.js -o image.dist.js"
+  },
+  "bin": {
+    "epic": "./.bin/index.js"
+  },
+  "keywords": [
+    "internet",
+    "radio",
+    "epic",
+    "rock",
+    "radio"
+  ],
+  "author": "Nathan Johnson",
+  "license": "MIT",
+  "dependencies": {
+    "@suldashi/lame": "^1.2.5",
+    "got": "^11.7.0",
+    "icecast-parser": "^4.0.2",
+    "ink": "^3.0.7",
+    "ink-big-text": "^1.2.0",
+    "ink-divider": "^3.0.0",
+    "ink-image": "^2.0.0",
+    "lodash.isequal": "^4.5.0",
+    "pcm-volume": "^1.0.0",
+    "react": "^16.13.1",
+    "speaker": "^0.5.2",
+    "term-img": "^5.0.0",
+    "terminal-image": "^1.2.1",
+    "wav": "^1.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4"
+  }
+}
