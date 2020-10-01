@@ -30,12 +30,10 @@
     "ink": "^3.0.7",
     "ink-big-text": "^1.2.0",
     "ink-divider": "^3.0.0",
-    "ink-image": "^2.0.0",
     "lodash.isequal": "^4.5.0",
     "pcm-volume": "^1.0.0",
     "react": "^16.13.1",
     "speaker": "^0.5.2",
-    "term-img": "^5.0.0",
     "terminal-image": "^1.2.1",
     "wav": "^1.0.2"
   },
