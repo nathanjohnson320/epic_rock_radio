@@ -14,4 +14,4 @@ $ epic
 - Spacebar mutes and unmutes
 - q quits the app (can also use Ctrl+c)
 
-![](epic.png)
+![](https://github.com/nathanjohnson320/epic_rock_radio/blob/master/epic.png?raw=true)
