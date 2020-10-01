@@ -1,18 +1,16 @@
 "use strict";
 
-var _http = _interopRequireDefault(require("http"));
+var _icecastParser = require("icecast-parser");
 
 var _querystring = _interopRequireDefault(require("querystring"));
 
-var _icecastParser = require("icecast-parser");
-
-var _speaker = _interopRequireDefault(require("speaker"));
+var _http = _interopRequireDefault(require("http"));
 
 var _lame = _interopRequireDefault(require("@suldashi/lame"));
 
 var _wav = _interopRequireDefault(require("wav"));
 
-var _lodash = _interopRequireDefault(require("lodash.isequal"));
+var _speaker = _interopRequireDefault(require("speaker"));
 
 var _pcmVolume = _interopRequireDefault(require("pcm-volume"));
 
@@ -41,7 +39,8 @@ const speaker = new _speaker.default({
 });
 const vol = new _pcmVolume.default();
 const radioStation = new _icecastParser.Parser({
-  url
+  url,
+  notifyOnChangeOnly: true
 });
 
 function clamp(value, min = 0, max = 1) {
@@ -56,9 +55,7 @@ const UI = () => {
     radioStation.on('metadata', metadata => {
       let params = _querystring.default.decode(metadata.get('StreamUrl'));
 
-      if (!(0, _lodash.default)(params, meta)) {
-        setMeta(Object.assign({}, params));
-      }
+      setMeta(params);
     });
 
     _http.default.get(url, res => {

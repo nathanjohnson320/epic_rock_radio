@@ -1,10 +1,9 @@
-import http from 'http';
-import query from 'querystring';
 import { Parser } from 'icecast-parser';
-import Speaker from 'speaker';
+import query from 'querystring';
+import http from 'http';
 import lame from '@suldashi/lame';
 import wav from 'wav';
-import isEqual from 'lodash.isequal';
+import Speaker from 'speaker';
 import volume from 'pcm-volume';
 import React, { useState, useEffect } from 'react';
 import { render, useInput, Box, Text, Newline } from 'ink';
@@ -24,7 +23,7 @@ const speaker = new Speaker({
 
 const vol = new volume();
 
-const radioStation = new Parser({ url });
+const radioStation = new Parser({ url, notifyOnChangeOnly: true });
 
 function clamp(value, min = 0, max = 1) {
   return Math.min(max, Math.max(min, value));
@@ -38,9 +37,7 @@ const UI = () => {
   useEffect(() => {
     radioStation.on('metadata', (metadata) => {
       let params = query.decode(metadata.get('StreamUrl'));
-      if (!isEqual(params, meta)) {
-        setMeta(Object.assign({}, params));
-      }
+      setMeta(params);
     });
 
     http.get(url, (res) => {
