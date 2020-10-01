@@ -108,7 +108,7 @@ const UI = () => {
     justifyContent: "center",
     alignItems: "center"
   }, /*#__PURE__*/_react.default.createElement(_image.default, {
-    width: "40%",
+    width: "30%",
     src: meta.picture
   })), /*#__PURE__*/_react.default.createElement(_ink.Box, {
     borderStyle: "bold",

@@ -90,7 +90,7 @@ const UI = () => {
           justifyContent="center"
           alignItems="center"
         >
-          <Image width="40%" src={meta.picture}></Image>
+          <Image width="30%" src={meta.picture}></Image>
         </Box>
 
         <Box
