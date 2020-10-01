@@ -8,7 +8,7 @@
     "build": "babel index.js -o index.dist.js && babel image.js -o image.dist.js"
   },
   "bin": {
-    "epic": "./.bin/index.js"
+    "epic": ".bin/index.js"
   },
   "keywords": [
     "internet",
