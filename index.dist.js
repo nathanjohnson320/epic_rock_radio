@@ -47,6 +47,10 @@ function clamp(value, min = 0, max = 1) {
   return Math.min(max, Math.max(min, value));
 }
 
+function setTerminalTitle(title) {
+  process.stdout.write(`${String.fromCharCode(27)}]0;${title}${String.fromCharCode(7)}`);
+}
+
 const UI = () => {
   const [tmpVol, setTmpVolume] = (0, _react.useState)(0);
   const [v, setVolume] = (0, _react.useState)(1);
@@ -55,6 +59,7 @@ const UI = () => {
     radioStation.on('metadata', metadata => {
       let params = _querystring.default.decode(metadata.get('StreamUrl'));
 
+      setTerminalTitle(`${params.title} : ${params.artist} - ${params.album}`);
       setMeta(params);
     });
 
