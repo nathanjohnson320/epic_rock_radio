@@ -1,6 +1,6 @@
 {
   "name": "epic_rock_radio",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "main": ".bin/index.dist.js",
   "scripts": {
